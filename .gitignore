@@ -1,0 +1,25 @@
+﻿# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# env / secrets
+.env
+.env.local
+
+# deps / build
+node_modules/
+dist/
+build/
+coverage/
+.pytest_cache/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# logs / temp
+*.log
+.tmp/
+.temp/
