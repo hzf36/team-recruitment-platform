@@ -1,0 +1,67 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: team
+      POSTGRES_PASSWORD: team
+      POSTGRES_DB: team_recruitment
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U team -d team_recruitment"]
+      interval: 3s
+      timeout: 5s
+      retries: 20
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # Override with APP_PORT for an isolated stack (default keeps README port 8080)
+      - "${APP_PORT:-8080}:8080"
+    environment:
+      PORT: 8080
+      DATABASE_URL: postgres://team:team@db:5432/team_recruitment
+      JWT_SECRET: ${JWT_SECRET}
+      STATIC_DIR: /app/frontend/dist
+      # Optional: set to e.g. 500 only in isolated fault probes; leave unset normally
+      AUTH_ME_FORCE_ERROR: ${AUTH_ME_FORCE_ERROR:-}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Optional automated API tests without installing Node on the host.
+  # Usage: docker compose --profile test run --rm tester
+  tester:
+    profiles: ["test"]
+    image: node:20-bookworm-slim
+    working_dir: /repo
+    volumes:
+      - .:/repo
+    environment:
+      APP_BASE: http://app:8080
+      PGHOST: db
+      PGPORT: "5432"
+      PGUSER: team
+      PGPASSWORD: team
+      PGDATABASE: team_recruitment
+      ROUND2_RUN_LABEL: ${ROUND2_RUN_LABEL:-}
+      AUDIT_RUN_LABEL: ${AUDIT_RUN_LABEL:-}
+    depends_on:
+      app:
+        condition: service_started
+      db:
+        condition: service_healthy
+    entrypoint: ["bash", "-lc"]
+    command:
+      - |
+        set -e
+        apt-get update -qq
+        DEBIAN_FRONTEND=noninteractive apt-get install -y -qq postgresql-client >/dev/null
+        node scripts/round2-tests.mjs
+        AUDIT_RUN_LABEL="$${AUDIT_RUN_LABEL:-compose-test}" node scripts/audit-probes.mjs
+
+volumes:
+  pgdata:

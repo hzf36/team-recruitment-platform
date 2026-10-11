@@ -3,12 +3,15 @@
 Thumbs.db
 .idea/
 .vscode/
+*.swp
+*~
 
-# env / secrets
+# Real env / secrets (keep .env.example tracked)
 .env
-.env.local
+.env.*
+!.env.example
 
-# deps / build
+# Dependencies & build outputs
 node_modules/
 dist/
 build/
@@ -19,7 +22,13 @@ __pycache__/
 .venv/
 venv/
 
-# logs / temp
+# Logs / temp / local scratch
 *.log
 .tmp/
 .temp/
+tmp/
+*.tmp
+.DS_Store
+
+# Local compose override (optional host tweaks)
+docker-compose.override.yml

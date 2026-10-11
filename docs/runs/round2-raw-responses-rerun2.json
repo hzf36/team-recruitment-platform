@@ -1,0 +1,5391 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/health",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "ok": true
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200,
+    "requestBody": {
+      "username": "alice",
+      "password": "password123"
+    },
+    "response": {
+      "token": "[REDACTED_JWT]",
+      "user": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200,
+    "requestBody": {
+      "username": "bob",
+      "password": "password123"
+    },
+    "response": {
+      "token": "[REDACTED_JWT]",
+      "user": {
+        "id": 2,
+        "username": "bob",
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200,
+    "requestBody": {
+      "username": "carol",
+      "password": "password123"
+    },
+    "response": {
+      "token": "[REDACTED_JWT]",
+      "user": {
+        "id": 3,
+        "username": "carol",
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200,
+    "requestBody": {
+      "username": "dave",
+      "password": "password123"
+    },
+    "response": {
+      "token": "[REDACTED_JWT]",
+      "user": {
+        "id": 4,
+        "username": "dave",
+        "nickname": "Dave（无关用户D）",
+        "bio": "路过观察",
+        "skills": [
+          "文档"
+        ],
+        "weeklyHours": 4
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 50,
+          "title": "[TMP] T9-persist-1791644411781",
+          "goal": "持久化",
+          "progress": "v1",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 55,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T15:00:11.793Z"
+        },
+        {
+          "id": 49,
+          "title": "[TMP] T8-1791644411673",
+          "goal": "快照",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 54,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T15:00:11.686Z"
+        },
+        {
+          "id": 48,
+          "title": "[TMP] T7b-1791644411587",
+          "goal": "权限B自己的项目",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Bob（申请人B）",
+          "roles": [
+            {
+              "id": 53,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T15:00:11.593Z"
+        },
+        {
+          "id": 47,
+          "title": "[TMP] T7a-1791644411562",
+          "goal": "权限A",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 52,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T15:00:11.578Z"
+        },
+        {
+          "id": 46,
+          "title": "[TMP] T6-1791644411231",
+          "goal": "幂等与冲突",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 51,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T15:00:11.241Z"
+        },
+        {
+          "id": 45,
+          "title": "[TMP] T5-race-1791644410850",
+          "goal": "并发竞争",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 50,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T15:00:10.856Z"
+        },
+        {
+          "id": 44,
+          "title": "[TMP] T4-full-1791644410369",
+          "goal": "满员后待审申请独立性",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 49,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T15:00:10.383Z"
+        },
+        {
+          "id": 43,
+          "title": "[TMP] T3-1791644410218",
+          "goal": "暂停恢复",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 48,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T15:00:10.226Z"
+        },
+        {
+          "id": 42,
+          "title": "[TMP] T2-1791644409570",
+          "goal": "撤回重申与拒绝原因",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 47,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T15:00:09.577Z"
+        },
+        {
+          "id": 41,
+          "title": "[UI4] 冲突后同步刷新",
+          "goal": "验证冲突后刷新名额与成员并保留错误提示",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 45,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web",
+                "JavaScript"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            },
+            {
+              "id": 46,
+              "name": "测试工程师",
+              "skillRequirements": [
+                "Python",
+                "测试"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:40:29.536Z"
+        },
+        {
+          "id": 40,
+          "title": "[TMP] T9-persist-1791643197824",
+          "goal": "持久化",
+          "progress": "v1",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 44,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T14:39:57.835Z"
+        },
+        {
+          "id": 39,
+          "title": "[TMP] T8-1791643197728",
+          "goal": "快照",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 43,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:39:57.742Z"
+        },
+        {
+          "id": 38,
+          "title": "[TMP] T7b-1791643197613",
+          "goal": "权限B自己的项目",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Bob（申请人B）",
+          "roles": [
+            {
+              "id": 42,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:39:57.619Z"
+        },
+        {
+          "id": 37,
+          "title": "[TMP] T7a-1791643197585",
+          "goal": "权限A",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 41,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:39:57.603Z"
+        },
+        {
+          "id": 36,
+          "title": "[TMP] T6-1791643197254",
+          "goal": "幂等与冲突",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 40,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:39:57.256Z"
+        },
+        {
+          "id": 35,
+          "title": "[TMP] T5-race-1791643196948",
+          "goal": "并发竞争",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 39,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T14:39:56.955Z"
+        },
+        {
+          "id": 34,
+          "title": "[TMP] T3-1791643196544",
+          "goal": "暂停恢复",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 38,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:39:56.556Z"
+        },
+        {
+          "id": 33,
+          "title": "[TMP] T2-1791643196206",
+          "goal": "撤回重申与拒绝原因",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 37,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:39:56.221Z"
+        },
+        {
+          "id": 32,
+          "title": "[UI3] 过期双页接受提示",
+          "goal": "验证发起人双页过期接受提示名额已满",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 35,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web",
+                "JavaScript"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            },
+            {
+              "id": 36,
+              "name": "测试工程师",
+              "skillRequirements": [
+                "Python",
+                "测试"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:23:08.862Z"
+        },
+        {
+          "id": 31,
+          "title": "[UI2] 撤回拒绝纯UI流程",
+          "goal": "纯按钮完成申请撤回重申拒绝",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 33,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web",
+                "JavaScript"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            },
+            {
+              "id": 34,
+              "name": "测试工程师",
+              "skillRequirements": [
+                "Python",
+                "测试"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:18:37.397Z"
+        },
+        {
+          "id": 30,
+          "title": "[UI] 浏览器验收组队项目",
+          "goal": "用于浏览器端完整流程验收的独立项目，保留SEED样例不动",
+          "progress": "已准备验收脚本",
+          "paused": true,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 31,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web",
+                "JavaScript"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            },
+            {
+              "id": 32,
+              "name": "测试工程师",
+              "skillRequirements": [
+                "Python",
+                "测试"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "paused",
+          "createdAt": "2026-10-10T14:07:58.480Z"
+        },
+        {
+          "id": 29,
+          "title": "[TMP] T9-persist-1791641038396",
+          "goal": "持久化",
+          "progress": "v1",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 30,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T14:03:58.410Z"
+        },
+        {
+          "id": 28,
+          "title": "[TMP] T8-1791641038300",
+          "goal": "快照",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 29,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:58.315Z"
+        },
+        {
+          "id": 27,
+          "title": "[TMP] T7b-1791641038183",
+          "goal": "权限B自己的项目",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Bob（申请人B）",
+          "roles": [
+            {
+              "id": 28,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:58.191Z"
+        },
+        {
+          "id": 26,
+          "title": "[TMP] T7a-1791641038163",
+          "goal": "权限A",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 27,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:58.175Z"
+        },
+        {
+          "id": 25,
+          "title": "[TMP] T6-1791641037832",
+          "goal": "幂等与冲突",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 26,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:57.838Z"
+        },
+        {
+          "id": 24,
+          "title": "[TMP] T5-race-1791641037529",
+          "goal": "并发竞争",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 25,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T14:03:57.546Z"
+        },
+        {
+          "id": 23,
+          "title": "[TMP] T3-1791641037083",
+          "goal": "暂停恢复",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 24,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:57.087Z"
+        },
+        {
+          "id": 22,
+          "title": "[TMP] T2-1791641036747",
+          "goal": "撤回重申与拒绝原因",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 23,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:56.761Z"
+        },
+        {
+          "id": 21,
+          "title": "[TMP] T9-persist-1791641026198",
+          "goal": "持久化",
+          "progress": "v1",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 22,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T14:03:46.209Z"
+        },
+        {
+          "id": 20,
+          "title": "[TMP] T8-1791641026073",
+          "goal": "快照",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 21,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:46.086Z"
+        },
+        {
+          "id": 19,
+          "title": "[TMP] T7b-1791641025969",
+          "goal": "权限B自己的项目",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Bob（申请人B）",
+          "roles": [
+            {
+              "id": 20,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:45.978Z"
+        },
+        {
+          "id": 18,
+          "title": "[TMP] T7a-1791641025950",
+          "goal": "权限A",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 19,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:45.963Z"
+        },
+        {
+          "id": 17,
+          "title": "[TMP] T6-1791641025630",
+          "goal": "幂等与冲突",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 18,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:45.640Z"
+        },
+        {
+          "id": 16,
+          "title": "[TMP] T5-race-1791641025336",
+          "goal": "并发竞争",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 17,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T14:03:45.339Z"
+        },
+        {
+          "id": 15,
+          "title": "[TMP] T3-1791641024938",
+          "goal": "暂停恢复",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 16,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:44.942Z"
+        },
+        {
+          "id": 14,
+          "title": "[TMP] T2-1791641024612",
+          "goal": "撤回重申与拒绝原因",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 15,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T14:03:44.616Z"
+        },
+        {
+          "id": 13,
+          "title": "[TMP] T9-persist-1791639752981",
+          "goal": "持久化",
+          "progress": "v1",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 14,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T13:42:32.993Z"
+        },
+        {
+          "id": 12,
+          "title": "[TMP] T8-1791639752870",
+          "goal": "快照",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 13,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:42:32.885Z"
+        },
+        {
+          "id": 11,
+          "title": "[TMP] T7b-1791639752742",
+          "goal": "权限B自己的项目",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Bob（申请人B）",
+          "roles": [
+            {
+              "id": 12,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:42:32.759Z"
+        },
+        {
+          "id": 10,
+          "title": "[TMP] T7a-1791639752732",
+          "goal": "权限A",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 11,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:42:32.736Z"
+        },
+        {
+          "id": 9,
+          "title": "[TMP] T6-1791639752404",
+          "goal": "幂等与冲突",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 10,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:42:32.422Z"
+        },
+        {
+          "id": 8,
+          "title": "[TMP] T5-race-1791639752105",
+          "goal": "并发竞争",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 9,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T13:42:32.116Z"
+        },
+        {
+          "id": 7,
+          "title": "[TMP] T3-1791639751693",
+          "goal": "暂停恢复",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 8,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 1,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:42:31.697Z"
+        },
+        {
+          "id": 6,
+          "title": "[TMP] T2-1791639751349",
+          "goal": "撤回重申与拒绝原因",
+          "progress": "",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 7,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:42:31.364Z"
+        },
+        {
+          "id": 5,
+          "title": "[SEED] 单名额竞争样例",
+          "goal": "示范最后 1 个名额被两名申请人竞争",
+          "progress": "尚未录取招募成员",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 6,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Web",
+                "JavaScript"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:41:49.324Z"
+        },
+        {
+          "id": 4,
+          "title": "[SEED] 已满员样例",
+          "goal": "示范招募已满：不可再申请，不可再接受",
+          "progress": "成员已齐",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 5,
+              "name": "后端开发",
+              "skillRequirements": [
+                "Node",
+                "PostgreSQL"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T13:41:49.319Z"
+        },
+        {
+          "id": 3,
+          "title": "[SEED] 暂停招募样例",
+          "goal": "示范暂停招募：不可新申请，已有 pending 仍可审核",
+          "progress": "已暂停",
+          "paused": true,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 4,
+              "name": "文档整理",
+              "skillRequirements": [
+                "文档"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            }
+          ],
+          "recruitStatus": "paused",
+          "createdAt": "2026-10-10T13:41:49.312Z"
+        },
+        {
+          "id": 2,
+          "title": "[SEED] 招募中-筛选样例",
+          "goal": "示范关键词与角色技能同角色匹配的开放招募项目",
+          "progress": "需求已整理，等待前端与测试加入",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 2,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Vue",
+                "JavaScript"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            },
+            {
+              "id": 3,
+              "name": "测试工程师",
+              "skillRequirements": [
+                "Python",
+                "测试"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:41:49.305Z"
+        },
+        {
+          "id": 1,
+          "title": "???????",
+          "goal": "?????????????????",
+          "progress": "???????",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 1,
+              "name": "????",
+              "skillRequirements": [
+                "Web",
+                "JavaScript"
+              ],
+              "capacity": 1,
+              "filled": 1,
+              "remaining": 0
+            }
+          ],
+          "recruitStatus": "full",
+          "createdAt": "2026-10-10T13:26:24.847Z"
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects?keyword=%E7%AD%9B%E9%80%89%E6%A0%B7%E4%BE%8B&role=%E5%89%8D%E7%AB%AF&skills=Vue%2CJavaScript",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 2,
+          "title": "[SEED] 招募中-筛选样例",
+          "goal": "示范关键词与角色技能同角色匹配的开放招募项目",
+          "progress": "需求已整理，等待前端与测试加入",
+          "paused": false,
+          "ownerNickname": "Alice（发起人A）",
+          "roles": [
+            {
+              "id": 2,
+              "name": "前端开发",
+              "skillRequirements": [
+                "Vue",
+                "JavaScript"
+              ],
+              "capacity": 2,
+              "filled": 0,
+              "remaining": 2
+            },
+            {
+              "id": 3,
+              "name": "测试工程师",
+              "skillRequirements": [
+                "Python",
+                "测试"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ],
+          "recruitStatus": "open",
+          "createdAt": "2026-10-10T13:41:49.305Z"
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects?keyword=%E7%AD%9B%E9%80%89%E6%A0%B7%E4%BE%8B&role=%E5%89%8D%E7%AB%AF&skills=Python",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": []
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects?keyword=%E7%AD%9B%E9%80%89%E6%A0%B7%E4%BE%8B&role=%E5%89%8D%E7%AB%AF&skills=Vue%2CTypeScript",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T2-1791644437258",
+      "goal": "撤回重申与拒绝原因",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2
+        }
+      ]
+    },
+    "response": {
+      "id": 51,
+      "title": "[TMP] T2-1791644437258",
+      "goal": "撤回重申与拒绝原因",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 56,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 0,
+          "remaining": 2
+        }
+      ],
+      "members": [
+        {
+          "id": 77,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.273Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:37.273Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 51,
+      "roleId": 56,
+      "reason": "第一次申请",
+      "contribution": "页面"
+    },
+    "response": {
+      "id": 67,
+      "projectId": 51,
+      "roleId": 56,
+      "status": "pending",
+      "reason": "第一次申请",
+      "contribution": "页面",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/67/withdraw",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 67,
+      "status": "withdrawn"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 51,
+      "roleId": 56,
+      "reason": "撤回后重新申请",
+      "contribution": "页面+联调"
+    },
+    "response": {
+      "id": 68,
+      "projectId": 51,
+      "roleId": 56,
+      "status": "pending",
+      "reason": "撤回后重新申请",
+      "contribution": "页面+联调",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/68/reject",
+    "status": 400,
+    "requestBody": {
+      "reason": ""
+    },
+    "response": {
+      "error": "拒绝时请填写简短原因"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/68/reject",
+    "status": 200,
+    "requestBody": {
+      "reason": "近期时间不匹配"
+    },
+    "response": {
+      "id": 68,
+      "status": "rejected",
+      "rejectReason": "近期时间不匹配"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/mine",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 68,
+          "projectId": 51,
+          "projectTitle": "[TMP] T2-1791644437258",
+          "roleId": 56,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期时间不匹配",
+          "createdAt": "2026-10-10T15:00:37.331Z",
+          "updatedAt": "2026-10-10T15:00:37.351Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请",
+          "contribution": "页面+联调"
+        },
+        {
+          "id": 67,
+          "projectId": 51,
+          "projectTitle": "[TMP] T2-1791644437258",
+          "roleId": 56,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:37.301Z",
+          "updatedAt": "2026-10-10T15:00:37.315Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请",
+          "contribution": "页面"
+        },
+        {
+          "id": 65,
+          "projectId": 49,
+          "projectTitle": "[TMP] T8-1791644411673",
+          "roleId": 54,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:11.717Z",
+          "updatedAt": "2026-10-10T15:00:11.717Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "快照测试",
+          "contribution": "x"
+        },
+        {
+          "id": 63,
+          "projectId": 46,
+          "projectTitle": "[TMP] T6-1791644411231",
+          "roleId": 51,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:11.263Z",
+          "updatedAt": "2026-10-10T15:00:11.302Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "一次申请",
+          "contribution": "x"
+        },
+        {
+          "id": 61,
+          "projectId": 45,
+          "projectTitle": "[TMP] T5-race-1791644410850",
+          "roleId": 50,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:10.872Z",
+          "updatedAt": "2026-10-10T15:00:10.898Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "B抢席",
+          "contribution": "b"
+        },
+        {
+          "id": 59,
+          "projectId": 44,
+          "projectTitle": "[TMP] T4-full-1791644410369",
+          "roleId": 49,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:10.413Z",
+          "updatedAt": "2026-10-10T15:00:10.442Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "T4-bob 先申请",
+          "contribution": "b"
+        },
+        {
+          "id": 57,
+          "projectId": 43,
+          "projectTitle": "[TMP] T3-1791644410218",
+          "roleId": 48,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:10.243Z",
+          "updatedAt": "2026-10-10T15:00:10.291Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "暂停前申请",
+          "contribution": "x"
+        },
+        {
+          "id": 56,
+          "projectId": 42,
+          "projectTitle": "[TMP] T2-1791644409570",
+          "roleId": 47,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期时间不匹配",
+          "createdAt": "2026-10-10T15:00:09.643Z",
+          "updatedAt": "2026-10-10T15:00:09.673Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请",
+          "contribution": "页面+联调"
+        },
+        {
+          "id": 55,
+          "projectId": 42,
+          "projectTitle": "[TMP] T2-1791644409570",
+          "roleId": 47,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:09.597Z",
+          "updatedAt": "2026-10-10T15:00:09.628Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请",
+          "contribution": "页面"
+        },
+        {
+          "id": 53,
+          "projectId": 41,
+          "projectTitle": "[UI4] 冲突后同步刷新",
+          "roleId": 45,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:40:46.076Z",
+          "updatedAt": "2026-10-10T14:41:05.237Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "UI4 bob",
+          "contribution": "x"
+        },
+        {
+          "id": 51,
+          "projectId": 39,
+          "projectTitle": "[TMP] T8-1791643197728",
+          "roleId": 43,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:57.773Z",
+          "updatedAt": "2026-10-10T14:39:57.773Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "快照测试",
+          "contribution": "x"
+        },
+        {
+          "id": 49,
+          "projectId": 36,
+          "projectTitle": "[TMP] T6-1791643197254",
+          "roleId": 40,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:57.279Z",
+          "updatedAt": "2026-10-10T14:39:57.309Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "一次申请",
+          "contribution": "x"
+        },
+        {
+          "id": 47,
+          "projectId": 35,
+          "projectTitle": "[TMP] T5-race-1791643196948",
+          "roleId": 39,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:56.970Z",
+          "updatedAt": "2026-10-10T14:39:56.995Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "B抢席",
+          "contribution": "b"
+        },
+        {
+          "id": 45,
+          "projectId": 34,
+          "projectTitle": "[TMP] T3-1791643196544",
+          "roleId": 38,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:56.572Z",
+          "updatedAt": "2026-10-10T14:39:56.617Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "暂停前申请",
+          "contribution": "x"
+        },
+        {
+          "id": 44,
+          "projectId": 33,
+          "projectTitle": "[TMP] T2-1791643196206",
+          "roleId": 37,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期时间不匹配",
+          "createdAt": "2026-10-10T14:39:56.280Z",
+          "updatedAt": "2026-10-10T14:39:56.311Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请",
+          "contribution": "页面+联调"
+        },
+        {
+          "id": 43,
+          "projectId": 33,
+          "projectTitle": "[TMP] T2-1791643196206",
+          "roleId": 37,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:56.251Z",
+          "updatedAt": "2026-10-10T14:39:56.265Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请",
+          "contribution": "页面"
+        },
+        {
+          "id": 41,
+          "projectId": 32,
+          "projectTitle": "[UI3] 过期双页接受提示",
+          "roleId": 35,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:23:36.797Z",
+          "updatedAt": "2026-10-10T14:25:47.764Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "双页测试：bob 申请前端",
+          "contribution": "前端实现"
+        },
+        {
+          "id": 40,
+          "projectId": 31,
+          "projectTitle": "[UI2] 撤回拒绝纯UI流程",
+          "roleId": 33,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期节奏不匹配（纯UI拒绝）",
+          "createdAt": "2026-10-10T14:20:08.339Z",
+          "updatedAt": "2026-10-10T14:20:44.096Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请（纯UI）",
+          "contribution": "继续负责前端页面"
+        },
+        {
+          "id": 39,
+          "projectId": 31,
+          "projectTitle": "[UI2] 撤回拒绝纯UI流程",
+          "roleId": 33,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:19:24.804Z",
+          "updatedAt": "2026-10-10T14:19:37.377Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请（纯UI）",
+          "contribution": "可做页面与联调"
+        },
+        {
+          "id": 37,
+          "projectId": 30,
+          "projectTitle": "[UI] 浏览器验收组队项目",
+          "roleId": 31,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期节奏不匹配（浏览器拒绝）",
+          "createdAt": "2026-10-10T14:10:35.314Z",
+          "updatedAt": "2026-10-10T14:10:35.392Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请（浏览器）",
+          "contribution": "页面实现"
+        },
+        {
+          "id": 36,
+          "projectId": 30,
+          "projectTitle": "[UI] 浏览器验收组队项目",
+          "roleId": 31,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:10:08.352Z",
+          "updatedAt": "2026-10-10T14:10:25.371Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请前端（浏览器验收）",
+          "contribution": ""
+        },
+        {
+          "id": 34,
+          "projectId": 28,
+          "projectTitle": "[TMP] T8-1791641038300",
+          "roleId": 29,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:58.330Z",
+          "updatedAt": "2026-10-10T14:03:58.330Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "快照测试",
+          "contribution": "x"
+        },
+        {
+          "id": 32,
+          "projectId": 25,
+          "projectTitle": "[TMP] T6-1791641037832",
+          "roleId": 26,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:57.852Z",
+          "updatedAt": "2026-10-10T14:03:57.883Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "一次申请",
+          "contribution": "x"
+        },
+        {
+          "id": 30,
+          "projectId": 24,
+          "projectTitle": "[TMP] T5-race-1791641037529",
+          "roleId": 25,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:57.561Z",
+          "updatedAt": "2026-10-10T14:03:57.582Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "B抢席",
+          "contribution": "b"
+        },
+        {
+          "id": 28,
+          "projectId": 23,
+          "projectTitle": "[TMP] T3-1791641037083",
+          "roleId": 24,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:57.130Z",
+          "updatedAt": "2026-10-10T14:03:57.166Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "暂停前申请",
+          "contribution": "x"
+        },
+        {
+          "id": 27,
+          "projectId": 22,
+          "projectTitle": "[TMP] T2-1791641036747",
+          "roleId": 23,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期时间不匹配",
+          "createdAt": "2026-10-10T14:03:56.821Z",
+          "updatedAt": "2026-10-10T14:03:56.852Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请",
+          "contribution": "页面+联调"
+        },
+        {
+          "id": 26,
+          "projectId": 22,
+          "projectTitle": "[TMP] T2-1791641036747",
+          "roleId": 23,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:56.791Z",
+          "updatedAt": "2026-10-10T14:03:56.805Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请",
+          "contribution": "页面"
+        },
+        {
+          "id": 24,
+          "projectId": 20,
+          "projectTitle": "[TMP] T8-1791641026073",
+          "roleId": 21,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:46.132Z",
+          "updatedAt": "2026-10-10T14:03:46.132Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "快照测试",
+          "contribution": "x"
+        },
+        {
+          "id": 22,
+          "projectId": 17,
+          "projectTitle": "[TMP] T6-1791641025630",
+          "roleId": 18,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:45.654Z",
+          "updatedAt": "2026-10-10T14:03:45.685Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "一次申请",
+          "contribution": "x"
+        },
+        {
+          "id": 20,
+          "projectId": 16,
+          "projectTitle": "[TMP] T5-race-1791641025336",
+          "roleId": 17,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:45.363Z",
+          "updatedAt": "2026-10-10T14:03:45.389Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "B抢席",
+          "contribution": "b"
+        },
+        {
+          "id": 18,
+          "projectId": 15,
+          "projectTitle": "[TMP] T3-1791641024938",
+          "roleId": 16,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:44.953Z",
+          "updatedAt": "2026-10-10T14:03:44.995Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "暂停前申请",
+          "contribution": "x"
+        },
+        {
+          "id": 17,
+          "projectId": 14,
+          "projectTitle": "[TMP] T2-1791641024612",
+          "roleId": 15,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期时间不匹配",
+          "createdAt": "2026-10-10T14:03:44.672Z",
+          "updatedAt": "2026-10-10T14:03:44.704Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请",
+          "contribution": "页面+联调"
+        },
+        {
+          "id": 16,
+          "projectId": 14,
+          "projectTitle": "[TMP] T2-1791641024612",
+          "roleId": 15,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:44.642Z",
+          "updatedAt": "2026-10-10T14:03:44.657Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请",
+          "contribution": "页面"
+        },
+        {
+          "id": 14,
+          "projectId": 12,
+          "projectTitle": "[TMP] T8-1791639752870",
+          "roleId": 13,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:32.916Z",
+          "updatedAt": "2026-10-10T13:42:32.916Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "快照测试",
+          "contribution": "x"
+        },
+        {
+          "id": 12,
+          "projectId": 9,
+          "projectTitle": "[TMP] T6-1791639752404",
+          "roleId": 10,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:32.437Z",
+          "updatedAt": "2026-10-10T13:42:32.468Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "一次申请",
+          "contribution": "x"
+        },
+        {
+          "id": 10,
+          "projectId": 8,
+          "projectTitle": "[TMP] T5-race-1791639752105",
+          "roleId": 9,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:32.131Z",
+          "updatedAt": "2026-10-10T13:42:32.154Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "B抢席",
+          "contribution": "b"
+        },
+        {
+          "id": 8,
+          "projectId": 7,
+          "projectTitle": "[TMP] T3-1791639751693",
+          "roleId": 8,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:31.716Z",
+          "updatedAt": "2026-10-10T13:42:31.762Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "暂停前申请",
+          "contribution": "x"
+        },
+        {
+          "id": 7,
+          "projectId": 6,
+          "projectTitle": "[TMP] T2-1791639751349",
+          "roleId": 7,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "rejected",
+          "rejectReason": "近期时间不匹配",
+          "createdAt": "2026-10-10T13:42:31.417Z",
+          "updatedAt": "2026-10-10T13:42:31.456Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "撤回后重新申请",
+          "contribution": "页面+联调"
+        },
+        {
+          "id": 6,
+          "projectId": 6,
+          "projectTitle": "[TMP] T2-1791639751349",
+          "roleId": 7,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "withdrawn",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:31.394Z",
+          "updatedAt": "2026-10-10T13:42:31.410Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "第一次申请",
+          "contribution": "页面"
+        },
+        {
+          "id": 4,
+          "projectId": 5,
+          "projectTitle": "[SEED] 单名额竞争样例",
+          "roleId": 6,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:41:49.324Z",
+          "updatedAt": "2026-10-10T13:41:49.324Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "竞争名额申请（user 2）",
+          "contribution": "可立即投入页面开发"
+        },
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectTitle": "???????",
+          "roleId": 1,
+          "roleName": "????",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:26:24.970Z",
+          "updatedAt": "2026-10-10T13:26:25.059Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "??????????",
+          "contribution": "????????"
+        }
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T3-1791644437807",
+      "goal": "暂停恢复",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2
+        }
+      ]
+    },
+    "response": {
+      "id": 52,
+      "title": "[TMP] T3-1791644437807",
+      "goal": "暂停恢复",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 57,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 0,
+          "remaining": 2
+        }
+      ],
+      "members": [
+        {
+          "id": 78,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.814Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:37.814Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 52,
+      "roleId": 57,
+      "reason": "暂停前申请",
+      "contribution": "x"
+    },
+    "response": {
+      "id": 69,
+      "projectId": 52,
+      "roleId": 57,
+      "status": "pending",
+      "reason": "暂停前申请",
+      "contribution": "x",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects/52/pause",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 52,
+      "title": "[TMP] T3-1791644437807",
+      "goal": "暂停恢复",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": true,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 57,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 0,
+          "remaining": 2
+        }
+      ],
+      "members": [
+        {
+          "id": 78,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.814Z"
+        }
+      ],
+      "recruitStatus": "paused",
+      "createdAt": "2026-10-10T15:00:37.814Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 400,
+    "requestBody": {
+      "projectId": 52,
+      "roleId": 57,
+      "reason": "暂停中申请",
+      "contribution": "y"
+    },
+    "response": {
+      "error": "项目已暂停招募，暂不可新申请"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/69/accept",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "handled": false,
+      "message": "已接受",
+      "applicationId": 69,
+      "memberId": 79,
+      "status": "accepted",
+      "project": {
+        "id": 52,
+        "title": "[TMP] T3-1791644437807",
+        "goal": "暂停恢复",
+        "progress": "",
+        "expectedOutcome": "",
+        "paused": true,
+        "ownerId": 1,
+        "owner": {
+          "id": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+          "skills": [
+            "Vue",
+            "项目管理"
+          ],
+          "weeklyHours": 12
+        },
+        "roles": [
+          {
+            "id": 57,
+            "name": "前端开发",
+            "skillRequirements": [
+              "Web"
+            ],
+            "capacity": 2,
+            "filled": 1,
+            "remaining": 1
+          }
+        ],
+        "members": [
+          {
+            "id": 78,
+            "userId": 1,
+            "username": "alice",
+            "nickname": "Alice（发起人A）",
+            "roleId": null,
+            "roleName": "发起人",
+            "isOwner": true,
+            "joinedAt": "2026-10-10T15:00:37.814Z"
+          },
+          {
+            "id": 79,
+            "userId": 2,
+            "username": "bob",
+            "nickname": "Bob（申请人B）",
+            "roleId": 57,
+            "roleName": "前端开发",
+            "isOwner": false,
+            "joinedAt": "2026-10-10T15:00:37.902Z"
+          }
+        ],
+        "recruitStatus": "paused",
+        "createdAt": "2026-10-10T15:00:37.814Z"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects/52/resume",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 52,
+      "title": "[TMP] T3-1791644437807",
+      "goal": "暂停恢复",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 57,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 1,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 78,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.814Z"
+        },
+        {
+          "id": 79,
+          "userId": 2,
+          "username": "bob",
+          "nickname": "Bob（申请人B）",
+          "roleId": 57,
+          "roleName": "前端开发",
+          "isOwner": false,
+          "joinedAt": "2026-10-10T15:00:37.902Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:37.814Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 52,
+      "roleId": 57,
+      "reason": "恢复后申请",
+      "contribution": "y"
+    },
+    "response": {
+      "id": 70,
+      "projectId": 52,
+      "roleId": 57,
+      "status": "pending",
+      "reason": "恢复后申请",
+      "contribution": "y",
+      "snapshot": {
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects/52",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 52,
+      "title": "[TMP] T3-1791644437807",
+      "goal": "暂停恢复",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 57,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 1,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 78,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.814Z"
+        },
+        {
+          "id": 79,
+          "userId": 2,
+          "username": "bob",
+          "nickname": "Bob（申请人B）",
+          "roleId": 57,
+          "roleName": "前端开发",
+          "isOwner": false,
+          "joinedAt": "2026-10-10T15:00:37.902Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:37.814Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T4-full-1791644437981",
+      "goal": "满员后待审申请独立性",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    "response": {
+      "id": 53,
+      "title": "[TMP] T4-full-1791644437981",
+      "goal": "满员后待审申请独立性",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 58,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 80,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.995Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:37.995Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 53,
+      "roleId": 58,
+      "reason": "T4-bob 先申请",
+      "contribution": "b"
+    },
+    "response": {
+      "id": 71,
+      "projectId": 53,
+      "roleId": 58,
+      "status": "pending",
+      "reason": "T4-bob 先申请",
+      "contribution": "b",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 53,
+      "roleId": 58,
+      "reason": "T4-carol 同角色待审",
+      "contribution": "c"
+    },
+    "response": {
+      "id": 72,
+      "projectId": 53,
+      "roleId": 58,
+      "status": "pending",
+      "reason": "T4-carol 同角色待审",
+      "contribution": "c",
+      "snapshot": {
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/71/accept",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "handled": false,
+      "message": "已接受",
+      "applicationId": 71,
+      "memberId": 81,
+      "status": "accepted",
+      "project": {
+        "id": 53,
+        "title": "[TMP] T4-full-1791644437981",
+        "goal": "满员后待审申请独立性",
+        "progress": "",
+        "expectedOutcome": "",
+        "paused": false,
+        "ownerId": 1,
+        "owner": {
+          "id": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+          "skills": [
+            "Vue",
+            "项目管理"
+          ],
+          "weeklyHours": 12
+        },
+        "roles": [
+          {
+            "id": 58,
+            "name": "前端开发",
+            "skillRequirements": [
+              "Web"
+            ],
+            "capacity": 1,
+            "filled": 1,
+            "remaining": 0
+          }
+        ],
+        "members": [
+          {
+            "id": 80,
+            "userId": 1,
+            "username": "alice",
+            "nickname": "Alice（发起人A）",
+            "roleId": null,
+            "roleName": "发起人",
+            "isOwner": true,
+            "joinedAt": "2026-10-10T15:00:37.995Z"
+          },
+          {
+            "id": 81,
+            "userId": 2,
+            "username": "bob",
+            "nickname": "Bob（申请人B）",
+            "roleId": 58,
+            "roleName": "前端开发",
+            "isOwner": false,
+            "joinedAt": "2026-10-10T15:00:38.041Z"
+          }
+        ],
+        "recruitStatus": "full",
+        "createdAt": "2026-10-10T15:00:37.995Z"
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects/53",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 53,
+      "title": "[TMP] T4-full-1791644437981",
+      "goal": "满员后待审申请独立性",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 58,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 1,
+          "remaining": 0
+        }
+      ],
+      "members": [
+        {
+          "id": 80,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:37.995Z"
+        },
+        {
+          "id": 81,
+          "userId": 2,
+          "username": "bob",
+          "nickname": "Bob（申请人B）",
+          "roleId": 58,
+          "roleName": "前端开发",
+          "isOwner": false,
+          "joinedAt": "2026-10-10T15:00:38.041Z"
+        }
+      ],
+      "recruitStatus": "full",
+      "createdAt": "2026-10-10T15:00:37.995Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 400,
+    "requestBody": {
+      "projectId": 53,
+      "roleId": 58,
+      "reason": "试图加入满员项目",
+      "contribution": "z"
+    },
+    "response": {
+      "error": "该角色名额已满，无法申请"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/72/accept",
+    "status": 409,
+    "requestBody": null,
+    "response": {
+      "error": "该角色名额已满",
+      "remaining": 0,
+      "filled": 1,
+      "capacity": 1
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/project/53",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 72,
+          "projectId": 53,
+          "projectTitle": "[TMP] T4-full-1791644437981",
+          "roleId": 58,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:38.026Z",
+          "updatedAt": "2026-10-10T15:00:38.026Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "T4-carol 同角色待审",
+          "contribution": "c"
+        },
+        {
+          "id": 71,
+          "projectId": 53,
+          "projectTitle": "[TMP] T4-full-1791644437981",
+          "roleId": 58,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:38.010Z",
+          "updatedAt": "2026-10-10T15:00:38.041Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "T4-bob 先申请",
+          "contribution": "b"
+        }
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/72/reject",
+    "status": 200,
+    "requestBody": {
+      "reason": "角色已满，抱歉"
+    },
+    "response": {
+      "id": 72,
+      "status": "rejected",
+      "rejectReason": "角色已满，抱歉"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/project/53",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 72,
+          "projectId": 53,
+          "projectTitle": "[TMP] T4-full-1791644437981",
+          "roleId": 58,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "rejected",
+          "rejectReason": "角色已满，抱歉",
+          "createdAt": "2026-10-10T15:00:38.026Z",
+          "updatedAt": "2026-10-10T15:00:38.129Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "T4-carol 同角色待审",
+          "contribution": "c"
+        },
+        {
+          "id": 71,
+          "projectId": 53,
+          "projectTitle": "[TMP] T4-full-1791644437981",
+          "roleId": 58,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:38.010Z",
+          "updatedAt": "2026-10-10T15:00:38.041Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "T4-bob 先申请",
+          "contribution": "b"
+        }
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T5-race-1791644438557",
+      "goal": "并发竞争",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    "response": {
+      "id": 54,
+      "title": "[TMP] T5-race-1791644438557",
+      "goal": "并发竞争",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 59,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 82,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:38.564Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:38.564Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 54,
+      "roleId": 59,
+      "reason": "B抢席",
+      "contribution": "b"
+    },
+    "response": {
+      "id": 73,
+      "projectId": 54,
+      "roleId": 59,
+      "status": "pending",
+      "reason": "B抢席",
+      "contribution": "b",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 54,
+      "roleId": 59,
+      "reason": "C抢席",
+      "contribution": "c"
+    },
+    "response": {
+      "id": 74,
+      "projectId": 54,
+      "roleId": 59,
+      "status": "pending",
+      "reason": "C抢席",
+      "contribution": "c",
+      "snapshot": {
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/73/accept",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "handled": false,
+      "message": "已接受",
+      "applicationId": 73,
+      "memberId": 83,
+      "status": "accepted",
+      "project": {
+        "id": 54,
+        "title": "[TMP] T5-race-1791644438557",
+        "goal": "并发竞争",
+        "progress": "",
+        "expectedOutcome": "",
+        "paused": false,
+        "ownerId": 1,
+        "owner": {
+          "id": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+          "skills": [
+            "Vue",
+            "项目管理"
+          ],
+          "weeklyHours": 12
+        },
+        "roles": [
+          {
+            "id": 59,
+            "name": "前端开发",
+            "skillRequirements": [
+              "Web"
+            ],
+            "capacity": 1,
+            "filled": 1,
+            "remaining": 0
+          }
+        ],
+        "members": [
+          {
+            "id": 82,
+            "userId": 1,
+            "username": "alice",
+            "nickname": "Alice（发起人A）",
+            "roleId": null,
+            "roleName": "发起人",
+            "isOwner": true,
+            "joinedAt": "2026-10-10T15:00:38.564Z"
+          },
+          {
+            "id": 83,
+            "userId": 2,
+            "username": "bob",
+            "nickname": "Bob（申请人B）",
+            "roleId": 59,
+            "roleName": "前端开发",
+            "isOwner": false,
+            "joinedAt": "2026-10-10T15:00:38.610Z"
+          }
+        ],
+        "recruitStatus": "full",
+        "createdAt": "2026-10-10T15:00:38.564Z"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/74/accept",
+    "status": 409,
+    "requestBody": null,
+    "response": {
+      "error": "该角色名额已满",
+      "remaining": 0,
+      "filled": 1,
+      "capacity": 1
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects/54",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 54,
+      "title": "[TMP] T5-race-1791644438557",
+      "goal": "并发竞争",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 59,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 1,
+          "remaining": 0
+        }
+      ],
+      "members": [
+        {
+          "id": 82,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:38.564Z"
+        },
+        {
+          "id": 83,
+          "userId": 2,
+          "username": "bob",
+          "nickname": "Bob（申请人B）",
+          "roleId": 59,
+          "roleName": "前端开发",
+          "isOwner": false,
+          "joinedAt": "2026-10-10T15:00:38.610Z"
+        }
+      ],
+      "recruitStatus": "full",
+      "createdAt": "2026-10-10T15:00:38.564Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/project/54",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 74,
+          "projectId": 54,
+          "projectTitle": "[TMP] T5-race-1791644438557",
+          "roleId": 59,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:38.597Z",
+          "updatedAt": "2026-10-10T15:00:38.597Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 73,
+          "projectId": 54,
+          "projectTitle": "[TMP] T5-race-1791644438557",
+          "roleId": 59,
+          "roleName": "前端开发",
+          "applicantId": 2,
+          "applicantUsername": "bob",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:38.582Z",
+          "updatedAt": "2026-10-10T15:00:38.610Z",
+          "snapshot": {
+            "nickname": "Bob（申请人B）",
+            "bio": "前端学习者",
+            "skills": [
+              "HTML",
+              "CSS",
+              "JavaScript"
+            ],
+            "weeklyHours": 10
+          },
+          "reason": "B抢席",
+          "contribution": "b"
+        }
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T6-1791644439003",
+      "goal": "幂等与冲突",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2
+        }
+      ]
+    },
+    "response": {
+      "id": 55,
+      "title": "[TMP] T6-1791644439003",
+      "goal": "幂等与冲突",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 60,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 0,
+          "remaining": 2
+        }
+      ],
+      "members": [
+        {
+          "id": 84,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.011Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:39.011Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 55,
+      "roleId": 60,
+      "reason": "一次申请",
+      "contribution": "x"
+    },
+    "response": {
+      "id": 75,
+      "projectId": 55,
+      "roleId": 60,
+      "status": "pending",
+      "reason": "一次申请",
+      "contribution": "x",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 400,
+    "requestBody": {
+      "projectId": 55,
+      "roleId": 60,
+      "reason": "重复 pending",
+      "contribution": "x"
+    },
+    "response": {
+      "error": "该项目已有待审核申请，请先等待审核或撤回后再申请"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/75/accept",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "handled": false,
+      "message": "已接受",
+      "applicationId": 75,
+      "memberId": 85,
+      "status": "accepted",
+      "project": {
+        "id": 55,
+        "title": "[TMP] T6-1791644439003",
+        "goal": "幂等与冲突",
+        "progress": "",
+        "expectedOutcome": "",
+        "paused": false,
+        "ownerId": 1,
+        "owner": {
+          "id": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+          "skills": [
+            "Vue",
+            "项目管理"
+          ],
+          "weeklyHours": 12
+        },
+        "roles": [
+          {
+            "id": 60,
+            "name": "前端开发",
+            "skillRequirements": [
+              "Web"
+            ],
+            "capacity": 2,
+            "filled": 1,
+            "remaining": 1
+          }
+        ],
+        "members": [
+          {
+            "id": 84,
+            "userId": 1,
+            "username": "alice",
+            "nickname": "Alice（发起人A）",
+            "roleId": null,
+            "roleName": "发起人",
+            "isOwner": true,
+            "joinedAt": "2026-10-10T15:00:39.011Z"
+          },
+          {
+            "id": 85,
+            "userId": 2,
+            "username": "bob",
+            "nickname": "Bob（申请人B）",
+            "roleId": 60,
+            "roleName": "前端开发",
+            "isOwner": false,
+            "joinedAt": "2026-10-10T15:00:39.055Z"
+          }
+        ],
+        "recruitStatus": "open",
+        "createdAt": "2026-10-10T15:00:39.011Z"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/75/accept",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "handled": true,
+      "message": "已处理",
+      "applicationId": 75,
+      "memberId": 85,
+      "status": "accepted"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 400,
+    "requestBody": {
+      "projectId": 55,
+      "roleId": 60,
+      "reason": "已成为成员后再申请",
+      "contribution": "x"
+    },
+    "response": {
+      "error": "你已是该项目成员，不能再提交待审核申请"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects/55",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 55,
+      "title": "[TMP] T6-1791644439003",
+      "goal": "幂等与冲突",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 60,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 2,
+          "filled": 1,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 84,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.011Z"
+        },
+        {
+          "id": 85,
+          "userId": 2,
+          "username": "bob",
+          "nickname": "Bob（申请人B）",
+          "roleId": 60,
+          "roleName": "前端开发",
+          "isOwner": false,
+          "joinedAt": "2026-10-10T15:00:39.055Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:39.011Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T7a-1791644439341",
+      "goal": "权限A",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    "response": {
+      "id": 56,
+      "title": "[TMP] T7a-1791644439341",
+      "goal": "权限A",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 61,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 86,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.348Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:39.348Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T7b-1791644439356",
+      "goal": "权限B自己的项目",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    "response": {
+      "id": 57,
+      "title": "[TMP] T7b-1791644439356",
+      "goal": "权限B自己的项目",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 2,
+      "owner": {
+        "id": 2,
+        "username": "bob",
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      },
+      "roles": [
+        {
+          "id": 62,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 87,
+          "userId": 2,
+          "username": "bob",
+          "nickname": "Bob（申请人B）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.362Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:39.362Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 56,
+      "roleId": 61,
+      "reason": "敏感正文请勿泄露",
+      "contribution": "私密贡献说明"
+    },
+    "response": {
+      "id": 76,
+      "projectId": 56,
+      "roleId": 61,
+      "status": "pending",
+      "reason": "敏感正文请勿泄露",
+      "contribution": "私密贡献说明",
+      "snapshot": {
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/76/accept",
+    "status": 403,
+    "requestBody": null,
+    "response": {
+      "error": "仅发起人可审核该申请"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects/56/pause",
+    "status": 403,
+    "requestBody": null,
+    "response": {
+      "error": "仅发起人可暂停招募"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects/56/resume",
+    "status": 403,
+    "requestBody": null,
+    "response": {
+      "error": "仅发起人可恢复招募"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/76",
+    "status": 403,
+    "requestBody": null,
+    "response": {
+      "error": "无权查看该申请正文"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/project/56",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 76,
+          "projectId": 56,
+          "projectTitle": "[TMP] T7a-1791644439341",
+          "roleId": 61,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:39.378Z",
+          "updatedAt": "2026-10-10T15:00:39.378Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        }
+      ]
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/project/57",
+    "status": 403,
+    "requestBody": null,
+    "response": {
+      "error": "仅发起人可查看本项目全部申请"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T8-1791644439455",
+      "goal": "快照",
+      "progress": "",
+      "expectedOutcome": "",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    "response": {
+      "id": 58,
+      "title": "[TMP] T8-1791644439455",
+      "goal": "快照",
+      "progress": "",
+      "expectedOutcome": "",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 63,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 88,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.471Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:39.471Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/me",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 2,
+      "username": "bob",
+      "nickname": "Bob（申请人B）",
+      "bio": "前端学习者",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "weeklyHours": 10
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 58,
+      "roleId": 63,
+      "reason": "快照测试",
+      "contribution": "x"
+    },
+    "response": {
+      "id": 77,
+      "projectId": 58,
+      "roleId": 63,
+      "status": "pending",
+      "reason": "快照测试",
+      "contribution": "x",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      }
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/profile/me",
+    "status": 200,
+    "requestBody": {
+      "nickname": "Bob已改名-1791644439509",
+      "bio": "改过的简介不应出现在旧申请",
+      "skills": [
+        "ChangedSkill"
+      ],
+      "weeklyHours": 99
+    },
+    "response": {
+      "id": 2,
+      "username": "bob",
+      "nickname": "Bob已改名-1791644439509",
+      "bio": "改过的简介不应出现在旧申请",
+      "skills": [
+        "ChangedSkill"
+      ],
+      "weeklyHours": 99
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/77",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 77,
+      "projectId": 58,
+      "projectTitle": "[TMP] T8-1791644439455",
+      "roleId": 63,
+      "roleName": "前端开发",
+      "applicantId": 2,
+      "applicantUsername": "bob",
+      "status": "pending",
+      "rejectReason": null,
+      "createdAt": "2026-10-10T15:00:39.502Z",
+      "updatedAt": "2026-10-10T15:00:39.502Z",
+      "snapshot": {
+        "nickname": "Bob（申请人B）",
+        "bio": "前端学习者",
+        "skills": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ],
+        "weeklyHours": 10
+      },
+      "reason": "快照测试",
+      "contribution": "x"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/auth/me",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 2,
+      "username": "bob",
+      "nickname": "Bob已改名-1791644439509",
+      "bio": "改过的简介不应出现在旧申请",
+      "skills": [
+        "ChangedSkill"
+      ],
+      "weeklyHours": 99
+    }
+  },
+  {
+    "method": "PUT",
+    "path": "/api/profile/me",
+    "status": 200,
+    "requestBody": {
+      "nickname": "Bob（申请人B）",
+      "bio": "前端学习者",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "weeklyHours": 10
+    },
+    "response": {
+      "id": 2,
+      "username": "bob",
+      "nickname": "Bob（申请人B）",
+      "bio": "前端学习者",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
+      "weeklyHours": 10
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/projects",
+    "status": 201,
+    "requestBody": {
+      "title": "[TMP] T9-persist-1791644439567",
+      "goal": "持久化",
+      "progress": "v1",
+      "expectedOutcome": "仍在",
+      "roles": [
+        {
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1
+        }
+      ]
+    },
+    "response": {
+      "id": 59,
+      "title": "[TMP] T9-persist-1791644439567",
+      "goal": "持久化",
+      "progress": "v1",
+      "expectedOutcome": "仍在",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 64,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "members": [
+        {
+          "id": 89,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.580Z"
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:00:39.580Z"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications",
+    "status": 201,
+    "requestBody": {
+      "projectId": 59,
+      "roleId": 64,
+      "reason": "持久化申请",
+      "contribution": "p"
+    },
+    "response": {
+      "id": 78,
+      "projectId": 59,
+      "roleId": 64,
+      "status": "pending",
+      "reason": "持久化申请",
+      "contribution": "p",
+      "snapshot": {
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/applications/78/accept",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "handled": false,
+      "message": "已接受",
+      "applicationId": 78,
+      "memberId": 90,
+      "status": "accepted",
+      "project": {
+        "id": 59,
+        "title": "[TMP] T9-persist-1791644439567",
+        "goal": "持久化",
+        "progress": "v1",
+        "expectedOutcome": "仍在",
+        "paused": false,
+        "ownerId": 1,
+        "owner": {
+          "id": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+          "skills": [
+            "Vue",
+            "项目管理"
+          ],
+          "weeklyHours": 12
+        },
+        "roles": [
+          {
+            "id": 64,
+            "name": "前端开发",
+            "skillRequirements": [
+              "Web"
+            ],
+            "capacity": 1,
+            "filled": 1,
+            "remaining": 0
+          }
+        ],
+        "members": [
+          {
+            "id": 89,
+            "userId": 1,
+            "username": "alice",
+            "nickname": "Alice（发起人A）",
+            "roleId": null,
+            "roleName": "发起人",
+            "isOwner": true,
+            "joinedAt": "2026-10-10T15:00:39.580Z"
+          },
+          {
+            "id": 90,
+            "userId": 3,
+            "username": "carol",
+            "nickname": "Carol（申请人C）",
+            "roleId": 64,
+            "roleName": "前端开发",
+            "isOwner": false,
+            "joinedAt": "2026-10-10T15:00:39.610Z"
+          }
+        ],
+        "recruitStatus": "full",
+        "createdAt": "2026-10-10T15:00:39.580Z"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200,
+    "requestBody": {
+      "username": "alice",
+      "password": "password123"
+    },
+    "response": {
+      "token": "[REDACTED_JWT]",
+      "user": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/api/auth/login",
+    "status": 200,
+    "requestBody": {
+      "username": "carol",
+      "password": "password123"
+    },
+    "response": {
+      "token": "[REDACTED_JWT]",
+      "user": {
+        "id": 3,
+        "username": "carol",
+        "nickname": "Carol（申请人C）",
+        "bio": "测试与后端",
+        "skills": [
+          "Python",
+          "测试"
+        ],
+        "weeklyHours": 8
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/projects/59",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "id": 59,
+      "title": "[TMP] T9-persist-1791644439567",
+      "goal": "持久化",
+      "progress": "v1",
+      "expectedOutcome": "仍在",
+      "paused": false,
+      "ownerId": 1,
+      "owner": {
+        "id": 1,
+        "username": "alice",
+        "nickname": "Alice（发起人A）",
+        "bio": "喜欢带队做实践项目（浏览器验收已更新）",
+        "skills": [
+          "Vue",
+          "项目管理"
+        ],
+        "weeklyHours": 12
+      },
+      "roles": [
+        {
+          "id": 64,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web"
+          ],
+          "capacity": 1,
+          "filled": 1,
+          "remaining": 0
+        }
+      ],
+      "members": [
+        {
+          "id": 89,
+          "userId": 1,
+          "username": "alice",
+          "nickname": "Alice（发起人A）",
+          "roleId": null,
+          "roleName": "发起人",
+          "isOwner": true,
+          "joinedAt": "2026-10-10T15:00:39.580Z"
+        },
+        {
+          "id": 90,
+          "userId": 3,
+          "username": "carol",
+          "nickname": "Carol（申请人C）",
+          "roleId": 64,
+          "roleName": "前端开发",
+          "isOwner": false,
+          "joinedAt": "2026-10-10T15:00:39.610Z"
+        }
+      ],
+      "recruitStatus": "full",
+      "createdAt": "2026-10-10T15:00:39.580Z"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/api/applications/mine",
+    "status": 200,
+    "requestBody": null,
+    "response": {
+      "items": [
+        {
+          "id": 78,
+          "projectId": 59,
+          "projectTitle": "[TMP] T9-persist-1791644439567",
+          "roleId": 64,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:39.594Z",
+          "updatedAt": "2026-10-10T15:00:39.610Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "持久化申请",
+          "contribution": "p"
+        },
+        {
+          "id": 76,
+          "projectId": 56,
+          "projectTitle": "[TMP] T7a-1791644439341",
+          "roleId": 61,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:39.378Z",
+          "updatedAt": "2026-10-10T15:00:39.378Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        },
+        {
+          "id": 74,
+          "projectId": 54,
+          "projectTitle": "[TMP] T5-race-1791644438557",
+          "roleId": 59,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:38.597Z",
+          "updatedAt": "2026-10-10T15:00:38.597Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 72,
+          "projectId": 53,
+          "projectTitle": "[TMP] T4-full-1791644437981",
+          "roleId": 58,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "rejected",
+          "rejectReason": "角色已满，抱歉",
+          "createdAt": "2026-10-10T15:00:38.026Z",
+          "updatedAt": "2026-10-10T15:00:38.129Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "T4-carol 同角色待审",
+          "contribution": "c"
+        },
+        {
+          "id": 70,
+          "projectId": 52,
+          "projectTitle": "[TMP] T3-1791644437807",
+          "roleId": 57,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:37.948Z",
+          "updatedAt": "2026-10-10T15:00:37.948Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "恢复后申请",
+          "contribution": "y"
+        },
+        {
+          "id": 66,
+          "projectId": 50,
+          "projectTitle": "[TMP] T9-persist-1791644411781",
+          "roleId": 55,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:11.808Z",
+          "updatedAt": "2026-10-10T15:00:11.823Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "持久化申请",
+          "contribution": "p"
+        },
+        {
+          "id": 64,
+          "projectId": 47,
+          "projectTitle": "[TMP] T7a-1791644411562",
+          "roleId": 52,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:11.609Z",
+          "updatedAt": "2026-10-10T15:00:11.609Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        },
+        {
+          "id": 62,
+          "projectId": 45,
+          "projectTitle": "[TMP] T5-race-1791644410850",
+          "roleId": 50,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:10.886Z",
+          "updatedAt": "2026-10-10T15:00:10.886Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 60,
+          "projectId": 44,
+          "projectTitle": "[TMP] T4-full-1791644410369",
+          "roleId": 49,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "rejected",
+          "rejectReason": "角色已满，抱歉",
+          "createdAt": "2026-10-10T15:00:10.428Z",
+          "updatedAt": "2026-10-10T15:00:10.520Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "T4-carol 同角色待审",
+          "contribution": "c"
+        },
+        {
+          "id": 58,
+          "projectId": 43,
+          "projectTitle": "[TMP] T3-1791644410218",
+          "roleId": 48,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T15:00:10.335Z",
+          "updatedAt": "2026-10-10T15:00:10.335Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "恢复后申请",
+          "contribution": "y"
+        },
+        {
+          "id": 54,
+          "projectId": 41,
+          "projectTitle": "[UI4] 冲突后同步刷新",
+          "roleId": 45,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:40:46.169Z",
+          "updatedAt": "2026-10-10T14:40:46.169Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "UI4 carol",
+          "contribution": "x"
+        },
+        {
+          "id": 52,
+          "projectId": 40,
+          "projectTitle": "[TMP] T9-persist-1791643197824",
+          "roleId": 44,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:57.850Z",
+          "updatedAt": "2026-10-10T14:39:57.866Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "持久化申请",
+          "contribution": "p"
+        },
+        {
+          "id": 50,
+          "projectId": 37,
+          "projectTitle": "[TMP] T7a-1791643197585",
+          "roleId": 41,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:57.633Z",
+          "updatedAt": "2026-10-10T14:39:57.633Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        },
+        {
+          "id": 48,
+          "projectId": 35,
+          "projectTitle": "[TMP] T5-race-1791643196948",
+          "roleId": 39,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:56.985Z",
+          "updatedAt": "2026-10-10T14:39:56.985Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 46,
+          "projectId": 34,
+          "projectTitle": "[TMP] T3-1791643196544",
+          "roleId": 38,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:39:56.648Z",
+          "updatedAt": "2026-10-10T14:39:56.648Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "恢复后申请",
+          "contribution": "y"
+        },
+        {
+          "id": 42,
+          "projectId": 32,
+          "projectTitle": "[UI3] 过期双页接受提示",
+          "roleId": 35,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "rejected",
+          "rejectReason": "前端名额已满，抱歉（过期页拒绝）",
+          "createdAt": "2026-10-10T14:24:40.831Z",
+          "updatedAt": "2026-10-10T14:26:24.998Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "双页测试：carol 申请前端",
+          "contribution": "组件与联调"
+        },
+        {
+          "id": 38,
+          "projectId": 30,
+          "projectTitle": "[UI] 浏览器验收组队项目",
+          "roleId": 31,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:10:35.458Z",
+          "updatedAt": "2026-10-10T14:10:45.936Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "Carol申请待接受",
+          "contribution": "联调"
+        },
+        {
+          "id": 35,
+          "projectId": 29,
+          "projectTitle": "[TMP] T9-persist-1791641038396",
+          "roleId": 30,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:58.438Z",
+          "updatedAt": "2026-10-10T14:03:58.453Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "持久化申请",
+          "contribution": "p"
+        },
+        {
+          "id": 33,
+          "projectId": 26,
+          "projectTitle": "[TMP] T7a-1791641038163",
+          "roleId": 27,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:58.207Z",
+          "updatedAt": "2026-10-10T14:03:58.207Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        },
+        {
+          "id": 31,
+          "projectId": 24,
+          "projectTitle": "[TMP] T5-race-1791641037529",
+          "roleId": 25,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:57.572Z",
+          "updatedAt": "2026-10-10T14:03:57.572Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 29,
+          "projectId": 23,
+          "projectTitle": "[TMP] T3-1791641037083",
+          "roleId": 24,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:57.208Z",
+          "updatedAt": "2026-10-10T14:03:57.208Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "恢复后申请",
+          "contribution": "y"
+        },
+        {
+          "id": 25,
+          "projectId": 21,
+          "projectTitle": "[TMP] T9-persist-1791641026198",
+          "roleId": 22,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:46.224Z",
+          "updatedAt": "2026-10-10T14:03:46.239Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "持久化申请",
+          "contribution": "p"
+        },
+        {
+          "id": 23,
+          "projectId": 18,
+          "projectTitle": "[TMP] T7a-1791641025950",
+          "roleId": 19,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:45.993Z",
+          "updatedAt": "2026-10-10T14:03:45.993Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        },
+        {
+          "id": 21,
+          "projectId": 16,
+          "projectTitle": "[TMP] T5-race-1791641025336",
+          "roleId": 17,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:45.378Z",
+          "updatedAt": "2026-10-10T14:03:45.378Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 19,
+          "projectId": 15,
+          "projectTitle": "[TMP] T3-1791641024938",
+          "roleId": 16,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T14:03:45.018Z",
+          "updatedAt": "2026-10-10T14:03:45.018Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "恢复后申请",
+          "contribution": "y"
+        },
+        {
+          "id": 15,
+          "projectId": 13,
+          "projectTitle": "[TMP] T9-persist-1791639752981",
+          "roleId": 14,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "accepted",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:33.008Z",
+          "updatedAt": "2026-10-10T13:42:33.023Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "持久化申请",
+          "contribution": "p"
+        },
+        {
+          "id": 13,
+          "projectId": 10,
+          "projectTitle": "[TMP] T7a-1791639752732",
+          "roleId": 11,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:32.775Z",
+          "updatedAt": "2026-10-10T13:42:32.775Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "敏感正文请勿泄露",
+          "contribution": "私密贡献说明"
+        },
+        {
+          "id": 11,
+          "projectId": 8,
+          "projectTitle": "[TMP] T5-race-1791639752105",
+          "roleId": 9,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:32.146Z",
+          "updatedAt": "2026-10-10T13:42:32.146Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "C抢席",
+          "contribution": "c"
+        },
+        {
+          "id": 9,
+          "projectId": 7,
+          "projectTitle": "[TMP] T3-1791639751693",
+          "roleId": 8,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:42:31.792Z",
+          "updatedAt": "2026-10-10T13:42:31.792Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "恢复后申请",
+          "contribution": "y"
+        },
+        {
+          "id": 5,
+          "projectId": 5,
+          "projectTitle": "[SEED] 单名额竞争样例",
+          "roleId": 6,
+          "roleName": "前端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "pending",
+          "rejectReason": null,
+          "createdAt": "2026-10-10T13:41:49.324Z",
+          "updatedAt": "2026-10-10T13:41:49.324Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "竞争名额申请（user 3）",
+          "contribution": "可立即投入页面开发"
+        },
+        {
+          "id": 3,
+          "projectId": 4,
+          "projectTitle": "[SEED] 已满员样例",
+          "roleId": 5,
+          "roleName": "后端开发",
+          "applicantId": 3,
+          "applicantUsername": "carol",
+          "status": "rejected",
+          "rejectReason": "满员后拒绝保留记录（浏览器）",
+          "createdAt": "2026-10-10T13:41:49.319Z",
+          "updatedAt": "2026-10-10T14:11:48.635Z",
+          "snapshot": {
+            "nickname": "Carol（申请人C）",
+            "bio": "测试与后端",
+            "skills": [
+              "Python",
+              "测试"
+            ],
+            "weeklyHours": 8
+          },
+          "reason": "满员后仍保留的待审核申请，不得自动通过",
+          "contribution": "可做接口测试"
+        }
+      ]
+    }
+  }
+]

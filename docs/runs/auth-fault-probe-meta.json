@@ -1,0 +1,6 @@
+﻿{
+  "port": 18081,
+  "at": "2026-10-11T10:00:00.000Z",
+  "note": "JWT omitted on purpose; see auth-fault-browser-20261011.md for status codes and UI conclusions.",
+  "token": "[REDACTED_JWT]"
+}

@@ -1,0 +1,194 @@
+{
+  "base": "http://localhost:8080",
+  "at": "2026-10-11T09:54:36.598Z",
+  "cases": [
+    {
+      "id": "V1-blank-title",
+      "pass": true,
+      "detail": {
+        "status": 400,
+        "json": {
+          "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+        }
+      }
+    },
+    {
+      "id": "V2-empty-progress-outcome",
+      "pass": true,
+      "detail": {
+        "status": 400,
+        "json": {
+          "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+        }
+      }
+    },
+    {
+      "id": "V3-capacity",
+      "pass": true,
+      "detail": {
+        "z": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+          }
+        },
+        "bad": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+          }
+        }
+      }
+    },
+    {
+      "id": "V4-role-reason",
+      "pass": true,
+      "detail": {
+        "created": 201,
+        "blankRole": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+          }
+        },
+        "badRole": {
+          "status": 400,
+          "json": {
+            "error": "招募角色不存在"
+          }
+        },
+        "blankReason": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整申请信息"
+          }
+        }
+      }
+    },
+    {
+      "id": "V5-role-skills-required",
+      "pass": true,
+      "detail": {
+        "emptyArr": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+          }
+        },
+        "blankTags": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+          }
+        },
+        "missing": {
+          "status": 400,
+          "json": {
+            "error": "请填写完整项目与至少一个招募角色，且每个角色须明确非空技能要求"
+          }
+        },
+        "ok": {
+          "status": 201,
+          "roles": [
+            {
+              "id": 77,
+              "name": "前端",
+              "skillRequirements": [
+                "JavaScript"
+              ],
+              "capacity": 1,
+              "filled": 0,
+              "remaining": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "F1-skill-set-match",
+      "pass": true,
+      "detail": {
+        "openId": 2,
+        "hitIds": [
+          2
+        ],
+        "missSubstringJava": [],
+        "missCrossRole": [],
+        "missPartial": []
+      }
+    },
+    {
+      "id": "L1-no-body-leak",
+      "pass": true,
+      "detail": {
+        "listStatus": 200,
+        "detailStatus": 200,
+        "daveRead": {
+          "status": 403,
+          "json": {
+            "error": "无权查看该申请正文"
+          }
+        },
+        "members": [
+          {
+            "id": 104,
+            "userId": 1,
+            "username": "alice",
+            "nickname": "Alice（发起人A）",
+            "roleId": null,
+            "roleName": "发起人",
+            "isOwner": true,
+            "joinedAt": "2026-10-11T09:54:37.162Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "R1-withdraw-accept-race",
+      "pass": true,
+      "detail": {
+        "withdraw": {
+          "status": 200,
+          "json": {
+            "id": 86,
+            "status": "withdrawn"
+          }
+        },
+        "accept": {
+          "status": 400,
+          "json": {
+            "error": "申请状态已变化，无法接受",
+            "status": "withdrawn"
+          }
+        },
+        "status": "withdrawn",
+        "filled": 0,
+        "recruitMembers": 0
+      }
+    },
+    {
+      "id": "A1-unauth",
+      "pass": true,
+      "detail": {
+        "me": {
+          "status": 401,
+          "json": {
+            "error": "未登录"
+          }
+        },
+        "mine": {
+          "status": 401,
+          "json": {
+            "error": "未登录"
+          }
+        },
+        "projects": {
+          "status": 401,
+          "json": {
+            "error": "未登录"
+          }
+        }
+      }
+    }
+  ]
+}

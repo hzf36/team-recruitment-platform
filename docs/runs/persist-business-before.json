@@ -1,0 +1,44 @@
+{
+  "marker": "[PERSIST] db-rebuild-1791644579645",
+  "projectId": 60,
+  "appId": 79,
+  "roleId": 65,
+  "before": {
+    "detailStatus": 200,
+    "title": "[PERSIST] db-rebuild-1791644579645",
+    "roles": [
+      {
+        "name": "前端开发",
+        "capacity": 1,
+        "filled": 1,
+        "remaining": 0
+      },
+      {
+        "name": "测试工程师",
+        "capacity": 1,
+        "filled": 0,
+        "remaining": 1
+      }
+    ],
+    "members": [
+      {
+        "username": "alice",
+        "roleName": "发起人",
+        "isOwner": true
+      },
+      {
+        "username": "bob",
+        "roleName": "前端开发",
+        "isOwner": false
+      }
+    ],
+    "applications": [
+      {
+        "id": 79,
+        "status": "accepted",
+        "reason": "持久化审核申请"
+      }
+    ],
+    "recruitStatus": "open"
+  }
+}

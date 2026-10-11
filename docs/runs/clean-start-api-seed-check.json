@@ -1,0 +1,128 @@
+{
+  "logins": [
+    {
+      "u": "alice",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "u": "bob",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "u": "carol",
+      "status": 200,
+      "ok": true
+    },
+    {
+      "u": "dave",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "seeds": [
+    {
+      "id": 4,
+      "title": "[SEED] 单名额竞争样例",
+      "goal": "示范最后 1 个名额被两名申请人竞争",
+      "progress": "尚未录取招募成员",
+      "paused": false,
+      "ownerNickname": "Alice（发起人A）",
+      "roles": [
+        {
+          "id": 5,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Web",
+            "JavaScript"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:09:32.300Z"
+    },
+    {
+      "id": 3,
+      "title": "[SEED] 已满员样例",
+      "goal": "示范招募已满：不可再申请，不可再接受",
+      "progress": "成员已齐",
+      "paused": false,
+      "ownerNickname": "Alice（发起人A）",
+      "roles": [
+        {
+          "id": 4,
+          "name": "后端开发",
+          "skillRequirements": [
+            "Node",
+            "PostgreSQL"
+          ],
+          "capacity": 1,
+          "filled": 1,
+          "remaining": 0
+        }
+      ],
+      "recruitStatus": "full",
+      "createdAt": "2026-10-10T15:09:32.293Z"
+    },
+    {
+      "id": 2,
+      "title": "[SEED] 暂停招募样例",
+      "goal": "示范暂停招募：不可新申请，已有 pending 仍可审核",
+      "progress": "已暂停",
+      "paused": true,
+      "ownerNickname": "Alice（发起人A）",
+      "roles": [
+        {
+          "id": 3,
+          "name": "文档整理",
+          "skillRequirements": [
+            "文档"
+          ],
+          "capacity": 2,
+          "filled": 0,
+          "remaining": 2
+        }
+      ],
+      "recruitStatus": "paused",
+      "createdAt": "2026-10-10T15:09:32.286Z"
+    },
+    {
+      "id": 1,
+      "title": "[SEED] 招募中-筛选样例",
+      "goal": "示范关键词与角色技能同角色匹配的开放招募项目",
+      "progress": "需求已整理，等待前端与测试加入",
+      "paused": false,
+      "ownerNickname": "Alice（发起人A）",
+      "roles": [
+        {
+          "id": 1,
+          "name": "前端开发",
+          "skillRequirements": [
+            "Vue",
+            "JavaScript"
+          ],
+          "capacity": 2,
+          "filled": 0,
+          "remaining": 2
+        },
+        {
+          "id": 2,
+          "name": "测试工程师",
+          "skillRequirements": [
+            "Python",
+            "测试"
+          ],
+          "capacity": 1,
+          "filled": 0,
+          "remaining": 1
+        }
+      ],
+      "recruitStatus": "open",
+      "createdAt": "2026-10-10T15:09:32.279Z"
+    }
+  ]
+}
