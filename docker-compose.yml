@@ -36,7 +36,8 @@ services:
   # Usage: docker compose --profile test run --rm tester
   tester:
     profiles: ["test"]
-    image: node:20-bookworm-slim
+    # Same major Node line as the app image; alpine is already used by Dockerfile builds.
+    image: node:20-alpine
     working_dir: /repo
     volumes:
       - .:/repo
@@ -54,12 +55,11 @@ services:
         condition: service_started
       db:
         condition: service_healthy
-    entrypoint: ["bash", "-lc"]
+    entrypoint: ["sh", "-lc"]
     command:
       - |
         set -e
-        apt-get update -qq
-        DEBIAN_FRONTEND=noninteractive apt-get install -y -qq postgresql-client >/dev/null
+        apk add --no-cache postgresql-client >/dev/null
         node scripts/round2-tests.mjs
         AUDIT_RUN_LABEL="$${AUDIT_RUN_LABEL:-compose-test}" node scripts/audit-probes.mjs
 
